@@ -1,3 +1,4 @@
+import 'package:biti/pages/profile/profile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +26,7 @@ class Fiberhome extends StatefulWidget {
 class _FiberhomeState extends State<Fiberhome> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.w500);
+  TextStyle(fontSize: 30, fontWeight: FontWeight.w500);
 
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
@@ -33,7 +34,7 @@ class _FiberhomeState extends State<Fiberhome> {
       style: optionStyle,
     ),
     Text(
-      'Index 1: Dahsboard Page',
+      'Index 1: Dashboard Page',
       style: optionStyle,
     ),
     Text(
@@ -45,21 +46,22 @@ class _FiberhomeState extends State<Fiberhome> {
       style: optionStyle,
     ),
     Text(
-      'Index 2: Login Page',
+      'Index 4: Login Page',
       style: optionStyle,
     ),
     Text(
-      'Index 2: Course Page',
+      'Index 5: Course Page',
       style: optionStyle,
     ),
     Text(
-      'Index 2: Notification Page',
+      'Index 6: Notification Page',
       style: optionStyle,
     ),
     Text(
-      'Index 2: Profile Page',
+      'Index 7: Profile Page',
       style: optionStyle,
     ),
+    ProfilePage()
   ];
 
   void _onItemTapped(int index) {
@@ -70,7 +72,7 @@ class _FiberhomeState extends State<Fiberhome> {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
+
     return Scaffold(
       appBar: AppBar(
         leading: Builder(builder: (context) {
@@ -80,7 +82,7 @@ class _FiberhomeState extends State<Fiberhome> {
               },
               icon: const Icon(Icons.menu));
         }),
-        title: Text("FGL Study Resources"),
+        title: const Text("FGL Study Resources"),
       ),
       body: Center(
         child: _widgetOptions[_selectedIndex],
@@ -158,7 +160,7 @@ class _FiberhomeState extends State<Fiberhome> {
           } else if (index == 2) {
             mappedIndex = 6;
           } else if (index == 3) {
-            mappedIndex = 7;
+            mappedIndex = 8;
           }
           setState(() {
             _selectedIndex = mappedIndex;
@@ -168,10 +170,10 @@ class _FiberhomeState extends State<Fiberhome> {
         selectedIndex: _selectedIndex == 0
             ? 0
             : _selectedIndex == 1
-                ? 1
-                : _selectedIndex == 6
-                    ? 2
-                    : 3,
+            ? 1
+            : _selectedIndex == 6
+            ? 2
+            : 3,
         destinations: [
           NavigationDestination(
             icon: Icon(Icons.home),
@@ -190,8 +192,6 @@ class _FiberhomeState extends State<Fiberhome> {
             label: "Notification",
             selectedIcon: Icon(Icons.space_dashboard_rounded),
           ),
-
-
           NavigationDestination(
             icon: Icon(Icons.person),
             label: "Profile",
